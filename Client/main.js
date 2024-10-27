@@ -1,5 +1,5 @@
 import './style.css'
-import rocketLogo from '/web4.png'
+import web4Logo from '/web4.png.jpg'
 
 document.querySelector('#app').innerHTML = `
   <div>
