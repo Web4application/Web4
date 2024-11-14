@@ -1,9 +1,43 @@
-web4-application
-
-
-
-
-
+web4-application.                             +----------------------------------------------------+
+|                      Web4                          |
+|                                                    |
+|  +-----------------------+   +-------------------+ |
+|  |     React.js SPA      |<--|  Google Search API | |
+|  |-----------------------|   +-------------------+ |
+|  | - Home Page           |                        |
+|  | - AppStore            |                        |
+|  | - WalletConnect       |                        |
+|  | - Chat with Kubu-Hai  |                        |
+|  | - Menu                |                        |
+|  | - Online Gaming       |                        |
+|  +-----------------------+                        |
+|         |                                       | |
+|         v                                       | |
+|  +-----------------------+                      | |
+|  |   Node.js + Express   |                      | |
+|  |-----------------------|                      | |
+|  | - API Gateway         |                      | |
+|  | - Auth Service        |                      | |
+|  | - User Management     |                      | |
+|  | - Crypto Wallet       |<--->| CoinMarketCap API |
+|  | - AppStore Service    |                      | |
+|  | - AI Interaction      |                      | |
+|  | - Marketplace Service |<--->| Facebook API   | |
+|  | - Game Service        |                      | |
+|  +-----------------------+                      | |
+|         |                                       | |
+|         v                                       | |
+|  +-----------------------+   +----------------+ | |
+|  |       MongoDB         |<--|  Discord API   | | |
+|  |-----------------------|   +----------------+ | |
+|  | - Users               |                      | |
+|  | - Apps                |                      | |
+|  | - Transactions        |                      | |
+|  | - Games               |                      | |
+|  | - Marketplace         |                      | |
+|  +-----------------------+                      | |
+|                                                    |
++----------------------------------------------------+
 │
 ├── /src
 │   ├── /modules
