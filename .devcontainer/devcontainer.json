@@ -4,9 +4,14 @@
 	"image": "mcr.microsoft.com/devcontainers/universal:2",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
-	"features": {
+	"features":
+	        "ghcr.io/itsmechlark/features/1password:1": {
+	        "ghcr.io/nikiforovall/devcontainer-features/dotnet-aspire:1": {
+	        "ghcr.io/devcontainers-extra/features/angular-cli:2": {
+	        "ghcr.io/devcontainers-extra/features/aws-cdk:2": {
+	        "ghcr.io/devcontainers/features/aws-cli:1": {
 		"ghcr.io/devcontainers/features/node:1": {
-		  "version": "1.4"
+		  "version": "2.1"
 		}
 	},
 
