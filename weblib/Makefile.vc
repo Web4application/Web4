@@ -1,4 +1,4 @@
-#
+# 
 # Stem for static libs and DLLs
 #
 LIBWEBPDECODER_BASENAME = libwebpdecoder
