@@ -1,4 +1,5 @@
 # Docker multi platform support
+![lmage.png](https://gist.github.com/assets/4258690/5e19f412-d178-4736-9c45-77cf76682cca)
 
 * Docker images support multiple platforms. When you run an image with multi-platform support, Docker automatically selects the image that matches your OS and architecture.
 
@@ -20,13 +21,11 @@ If you do **NOT** init emulators : when you will use `--platform` with an arch d
 ``
 
   * __List of `tonistiigi/binfmt` components versions :__
-``
-    ```docker run --privileged --rm tonistiigi/binfmt -version ```
 
-
-
+    ```
+    docker run --privileged --rm tonistiigi/binfmt -version
+    ```
     ![image](https://gist.github.com/assets/4258690/106b3806-8c6d-43ea-914f-8354042ca0ac)
-```
   * __Install emulators :__
 
     ```docker run --privileged --rm tonistiigi/binfmt -install all```
@@ -38,9 +37,12 @@ If you do **NOT** init emulators : when you will use `--platform` with an arch d
     ![image](https://gist.github.com/assets/4258690/1a3619a1-19c3-47b1-a974-c76929481aad)
 
   * __Github workflow__ : If needed to install emulators from inside a github workflow use [setup-qemu-action](https://github.com/docker/setup-qemu-action)
-  ```docker run --privileged --rm tonistiigi/binfmt -version```
 
-     ```yaml
+```
+docker run --privileged --rm tonistiigi/binfmt -version
+```
+``
+   ```yml
     jobs:
       your-job-name:
         steps:
@@ -132,7 +134,7 @@ If you do **NOT** init emulators : when you will use `--platform` with an arch d
     EOT
     ```
 
-    ![image](https://gist.github.com/assets/4258690/423f303f-4d88-408e-9f87-6a24ac121253)
+    [!](https://gist.github.com/assets/4258690/423f303f-4d88-408e-9f87-6a24ac121253)
 
     Note : those images does not automatically appear in docker images when using docker-container driver.
     
@@ -150,7 +152,7 @@ If you do **NOT** init emulators : when you will use `--platform` with an arch d
      docker buildx ls
      ```
     
-     ![image](https://gist.github.com/assets/4258690/5e19f412-d178-4736-9c45-77cf76682cca)
+   ![](https://gist.github.com/assets/4258690/5e19f412-d178-4736-9c45-77cf76682cca)
   
    * __Remove builder :__
 
