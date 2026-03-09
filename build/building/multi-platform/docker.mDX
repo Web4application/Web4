@@ -6,7 +6,7 @@
 To solve that you can enable the containerd image store by modifing daemon.json (https://docs.docker.com/storage/containerd/)
  
 * _About BuildKit_ : BuildKit is enabled by default on Docker Engine >= 23.0. If not enabled, you may activate BuildKit which is a better docker build engine, with `export DOCKER_BUILD=1` or by modifying `/etc/docker/daemon.json` with `"features": {"buildkit" : true}`. It is not a requirement for basic multi platform support, but it is a requirement when using `buildx`.
-
+  ```docker run --privileged --rm tonistiigi/binfmt -version```
 * DOC : https://docs.docker.com/build/building/multi-platform/
 
 ## RUN multiplatorm images
@@ -17,12 +17,16 @@ Usage of `tonistiigi/binfmt` allow to trigger qemu emulators when using `--platf
 
 If you do **NOT** init emulators : when you will use `--platform` with an arch diffrent from the host, you will get an exec error. But if you specify the same arch than the host, everything will work fine without init any emulator.
 
-  * __List of `tonistiigi/binfmt` components versions :__
+``
 
-    ```docker run --privileged --rm tonistiigi/binfmt -version```
+  * __List of `tonistiigi/binfmt` components versions :__
+``
+    ```docker run --privileged --rm tonistiigi/binfmt -version ```
+
+
 
     ![image](https://gist.github.com/assets/4258690/106b3806-8c6d-43ea-914f-8354042ca0ac)
-
+```
   * __Install emulators :__
 
     ```docker run --privileged --rm tonistiigi/binfmt -install all```
@@ -34,14 +38,16 @@ If you do **NOT** init emulators : when you will use `--platform` with an arch d
     ![image](https://gist.github.com/assets/4258690/1a3619a1-19c3-47b1-a974-c76929481aad)
 
   * __Github workflow__ : If needed to install emulators from inside a github workflow use [setup-qemu-action](https://github.com/docker/setup-qemu-action)
-    ```yaml
+  ```docker run --privileged --rm tonistiigi/binfmt -version```
+
+     ```yaml
     jobs:
       your-job-name:
         steps:
           - name: Set up QEMU arm emulator if we are on a x86 runner
             if: ${{ runner.arch == 'X86' || runner.arch == 'X64' }}
             id: qemu-arm64
-            uses: docker/setup-qemu-action@v3
+            uses: docker/setup-qemu-action@v4
             with:
               image: tonistiigi/binfmt:latest
               platforms: linux/arm64
@@ -54,13 +60,13 @@ If you do **NOT** init emulators : when you will use `--platform` with an arch d
               image: tonistiigi/binfmt:latest
               platforms: linux/amd64
     ```
-
+```
 ### RUN
  
 
   * __These tests launch image for linux/amd64 and should print `x86_64` :__
 
-    ```cs
+    ```yaml
     docker run -it --rm --platform linux/amd64 alpine:latest uname -m
     docker run -it --rm --platform linux/amd64 ubuntu:latest uname -m
     DOCKER_DEFAULT_PLATFORM=linux/amd64 docker run -it --rm alpine:latest uname -m
@@ -68,7 +74,7 @@ If you do **NOT** init emulators : when you will use `--platform` with an arch d
 
   * __These tests launch image for linux/arm64 and should print `aarch64` :__
 
-    ```brew
+    ```yaml
     docker run -it --rm --platform linux/arm64 alpine:latest uname -m
     docker run -it --rm --platform linux/arm64 ubuntu:latest uname -m
     DOCKER_DEFAULT_PLATFORM=linux/arm64 docker run -it --rm alpine:latest uname -m
@@ -83,7 +89,7 @@ If you do **NOT** init emulators : when you will use `--platform` with an arch d
 
   * __This test build an image for linux/amd64 and run it and should print `x86_64` :__
 
-    ```db
+    ```yaml
     docker build --platform linux/amd64 --tag alpine:foo-amd64 - <<'EOT'
     FROM alpine:latest
     EOT
@@ -93,7 +99,7 @@ If you do **NOT** init emulators : when you will use `--platform` with an arch d
 
   * __This test build an image for linux/arm64 and run it and should print `aarch64` :__
 
-    ```sh
+    ```yaml
     docker build --platform linux/arm64 --tag alpine:foo-arm64 - <<'EOT'
     FROM alpine:latest
     EOT
@@ -104,6 +110,9 @@ If you do **NOT** init emulators : when you will use `--platform` with an arch d
 ### BUILD using buildx builders
 
 * Create a new builder using the `docker-container` driver allow to more complex features like simultaneous multi-platform builds and the more advanced cache exporters.
+
+  ```docker run --privileged --rm tonistiigi/binfmt -version```
+
 
   * __Create a builder with `docker-container` driver :__
 
@@ -117,7 +126,7 @@ If you do **NOT** init emulators : when you will use `--platform` with an arch d
 
   * __Build images with this builder :__
 
-    ```npx
+    ```yaml
     docker buildx build --builder buildx-container --platform linux/arm64,linux/amd64 --tag alpine:multi - <<'EOT'
     FROM alpine:latest
     EOT
@@ -129,7 +138,7 @@ If you do **NOT** init emulators : when you will use `--platform` with an arch d
     
    * __Set default / remove builder :__
 
-     ```sh
+     ```bash
      docker buildx use buildx-container
      docker buildx ls
      ```
@@ -153,7 +162,7 @@ If you do **NOT** init emulators : when you will use `--platform` with an arch d
 
    * __Publish an image and its manifest - Need an account on DockerHub :__
 
-     ```bash
+     ```yaml
      docker login -u studioetrange -p password
      docker buildx build --builder buildx-container --platform linux/arm64,linux/amd64 --tag studioetrange/alpine:multi --push - <<'EOT'
      FROM alpine:latest
@@ -163,7 +172,7 @@ If you do **NOT** init emulators : when you will use `--platform` with an arch d
      ![image](https://gist.github.com/assets/4258690/1b5ce235-0d39-448a-b5e4-ad2d1d7d3f72)
 
    * __Inspect multi arch published image :__
-     ```
+     ```yaml
      docker manifest inspect studioetrange/alpine:multi
      docker buildx imagetools inspect studioetrange/alpine:multi
      ```
@@ -176,3 +185,78 @@ If you do **NOT** init emulators : when you will use `--platform` with an arch d
 
 * Alternative - Use a strategy of cross compilation instead of emulator :
   * https://www.docker.com/blog/faster-multi-platform-builds-dockerfile-cross-compilation-guide/
+
+[![GitHub release](https://img.shields.io/github/release/docker/setup-qemu-action.svg?style=flat-square)](https://github.com/docker/setup-qemu-action/releases/latest)
+[![GitHub marketplace](https://img.shields.io/badge/marketplace-docker--setup--qemu-blue?logo=github&style=flat-square)](https://github.com/marketplace/actions/docker-setup-qemu)
+[![CI workflow](https://img.shields.io/github/actions/workflow/status/docker/setup-qemu-action/ci.yml?branch=master&label=ci&logo=github&style=flat-square)](https://github.com/docker/setup-qemu-action/actions?workflow=ci)
+[![Test workflow](https://img.shields.io/github/actions/workflow/status/docker/setup-qemu-action/test.yml?branch=master&label=test&logo=github&style=flat-square)](https://github.com/docker/setup-qemu-action/actions?workflow=test)
+[![Codecov](https://img.shields.io/codecov/c/github/docker/setup-qemu-action?logo=codecov&style=flat-square)](https://codecov.io/gh/docker/setup-qemu-action)
+
+## About
+
+GitHub Action to install [QEMU](https://github.com/qemu/qemu) static binaries.
+
+![Screenshot](.github/setup-qemu-action.png)
+
+___
+
+* [Usage](#usage)
+* [Customizing](#customizing)
+  * [inputs](#inputs)
+  * [outputs](#outputs)
+* [Contributing](#contributing)
+
+## Usage
+
+```yaml
+name: ci
+
+on:
+  push:
+
+jobs:
+  qemu:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v4
+```
+
+> [!NOTE]
+> If you are using [`docker/setup-buildx-action`](https://github.com/docker/setup-buildx-action),
+> this action should come before it:
+> 
+> ```yml
+>     -
+>       name: Set up QEMU
+>       uses: docker/setup-qemu-action@v4
+>     -
+>       name: Set up Docker Buildx
+>       uses: docker/setup-buildx-action@v4
+> ```
+
+## Customizing
+
+### inputs
+
+The following inputs can be used as `step.with` keys:
+
+| Name          | Type   | Default                                                                       | Description                                        |
+|---------------|--------|-------------------------------------------------------------------------------|----------------------------------------------------|
+| `image`       | String | [`tonistiigi/binfmt:latest`](https://hub.docker.com/r/tonistiigi/binfmt/tags) | QEMU static binaries Docker image                  |
+| `platforms`   | String | `all`                                                                         | Platforms to install (e.g., `arm64,riscv64,arm`)   |
+| `cache-image` | Bool   | `true`                                                                        | Cache binfmt image to GitHub Actions cache backend |
+
+### outputs
+
+The following outputs are available:
+
+| Name          | Type    | Description                           |
+|---------------|---------|---------------------------------------|
+| `platforms`   | String  | Available platforms (comma separated) |
+
+## Contributing
+
+Want to contribute? Awesome! You can find information about contributing to
+this project in the [CONTRIBUTING.md](/.github/CONTRIBUTING.md)
