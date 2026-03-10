@@ -23,7 +23,7 @@ Keywords are predefined, reserved identifiers that have special meanings to the 
 The first table in this article lists keywords that are reserved identifiers in any part of a C# program. The second table lists the contextual keywords in C#. Contextual keywords have special meaning only in a limited program context and can be used as identifiers outside that context. Generally, as new keywords are added to the C# language, they're added as contextual keywords to avoid breaking programs written in earlier versions.
 
 :::row:::
-    :::column:::
+    :::column::: 
         .. [`abstract`](abstract.md)  
         :[`as`](../operators/type-testing-and-cast.md#the-as-operator):
       .. [`base`](base.md)::
@@ -107,7 +107,7 @@ The first table in this article lists keywords that are reserved identifiers in 
         [`void`](../builtin-types/void.md)  
         [`volatile`](volatile.md)  
         [`while`](../statements/iteration-statements.md#the-while-statement)  
-    :::column-end:::
+:::column-end:::
 :::row-end:::
 
 ## Contextual keywords
