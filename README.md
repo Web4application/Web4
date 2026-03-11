@@ -12,4 +12,18 @@ project/
  ├── database/
  ├── runtime/
  └── compiler/
+```
  ---
+
+```fsharp
+doc {
+  mdx: "# My Project"
+}
+
+database {
+  sql: SELECT * FROM users;
+}
+
+logic {
+  prolog: parent(john, mary).
+}
