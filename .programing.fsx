@@ -6,7 +6,7 @@ open LogicEngine
 open PSX
 open BEX
 open ASX
-open SWX
+open SWX 
 
 [<EntryPoint>]
 let main argv =
@@ -49,3 +49,4 @@ let main argv =
     // SWX
     SWX.renderMarkdown "# Hello from SWX\nThis is Markdown rendered!"
     0
+
