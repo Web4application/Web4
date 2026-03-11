@@ -15,7 +15,7 @@ project/
 ```
  ---
 
-```fsharp
+```fsx
 doc {
   mdx: "# My Project"
 }
