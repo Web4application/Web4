@@ -1,4 +1,4 @@
-const completion: Fig.Subcommand = {
+const completion: Fig.Subcommand = { 
   name: "sdc",
   description: '"setup dominic\'s computer" cli tool',
   subcommands: [
