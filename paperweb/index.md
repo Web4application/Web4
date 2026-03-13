@@ -226,7 +226,7 @@ It’s old-school documentation vibes mixed with next-gen workflow magic.
 
 ⸻
 
-📚 :Structure of Aura.paperweb](xlai.ai):
+📚 :Structure of Aura.paperweb](https://xlai.ai):
 
 Below is the canonical layout.
 You’ll plug in the real sheet names + function names from your .xlsl repo 
@@ -311,7 +311,7 @@ Every sheet in your .xlsl file becomes a page.
 
 :Format:
 
-![scientific_work_SHEET](:com.workbook.ai:)
+![scientific_work_SHEET](:workbook.ai:)
 
 
 
@@ -368,7 +368,7 @@ Auto-optimized using vectorized engine.
 
 5. System Pages
 
-[***aura.paperweb***](system/engines.md)
+[***aura.paperweb***](system/engines.md#engines.html)
 
 Explain:
 	•	Interpretation
@@ -382,7 +382,7 @@ Explain:
 
 Full .xlsl format spec.
 
-[***aura.xlsl.paperweb***](system/pipelines.md)
+[***aura.xlsl.paperweb***](system/pipelines.md#pipeline.html)
 
 Flow diagrams for chained operations.
 
@@ -439,7 +439,8 @@ Metadata and versioning
 
 [docs.aura.paperweb](docs.rs)(https://www.google.com/webhp?tbo=p&num=10&udm=36)
 :built-website: https:fastht.ml
-:@fastht.ml: name the webasite .. https://aura.paperweb:
+:@fastht.ml: name the webasite
+.. https://aura.paperweb:
 :aura-paperweb:
 :projectstructure:
 .. extension-tags:
@@ -521,7 +522,7 @@ Interactive drag-and-drop quantum circuit simulator with GPU-accelerated backend
 - Fractional/negative amplitude support (Aura math integration)
 
 :Installation:
-git clone <[repo-url](https://github.com/Web4application/Aura_Full_Project.xlsl.git)
+git clone <[repo-url](https://github.com/Web4application/Aura_Full_Project.xls.html)
 git clone https://huggingface.co/datasets/yatin-superintelligence/Edge-Agent-Reasoning-WebSearch-260K>
 cd AuraQuantumIDE
 pip install -r requirements.txt
@@ -530,7 +531,7 @@ https://github.com/Web4application/Aura_Full_Project.xlsl.git
 
 
 
-:first-project: .. https:aura.build:
+:first-project: .. https://aura.build:
 
     .. aura_project/:
     ├── data/
@@ -567,7 +568,7 @@ entities, | columns | attributes.
 
 .. extensions:
 
-.. ![aura_diagram.png](https://huggingface.co/datasets/Seriki/Aura.Xlsl/raw/main/assets/aura_diadram.com)
+.. ![aura_diagram.png](https://huggingface.co/datasets/Seriki/Aura.Xlsl/raw/main/assets/aura_diagram.com)
 
 
 2. :.xqsl: — Quantum Spreadsheet Language:
