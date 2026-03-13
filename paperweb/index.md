@@ -267,7 +267,7 @@ Sections:
 
 ⸻
 
-2. Extension Pages — paperweb/extensions/{name}.md
+2. Extension Pages — paperweb/extensions/{name}.md#index.html)
 
 Each Aura extension becomes a standalone page.
 
@@ -301,7 +301,7 @@ For example:
 	•	Retry/fallback logic
 
 [You can generate as many extensions as your repo contains]
-(https://install.md)
+(https://install.md#install.hrml)
 
 .. https://github.com/Web4application/Aura_Full_Project.xlsl.com
 .. [Web4application/Aura_Full_Project.xlsl]:(https://doi.org/10.48550/arXiv.2412.00119)
@@ -522,7 +522,7 @@ Interactive drag-and-drop quantum circuit simulator with GPU-accelerated backend
 - Fractional/negative amplitude support (Aura math integration)
 
 :Installation:
-git clone <[repo-url](https://github.com/Web4application/Aura_Full_Project.xls.html)
+git clone <[repo-url](https://github.com/Web4application/Aura_Full_Project.xls#index.md)
 git clone https://huggingface.co/datasets/yatin-superintelligence/Edge-Agent-Reasoning-WebSearch-260K>
 cd AuraQuantumIDE
 pip install -r requirements.txt
