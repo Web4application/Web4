@@ -1,0 +1,28 @@
+import json
+
+chunked_prompt = {
+    "chunkedPrompt": {
+        "chunks": [
+            {
+                "id": 178,
+                "author": "user",
+                "payload": {
+                    "type": "text",
+                    "text": "Summerise the project what dues it do"
+                }
+            },
+            {
+                "id": 179,
+                "author": "model",
+                "payload": {
+                    "type": "thinking",
+                    "text": "Outlining Project Scope..."
+                }
+            }
+        ]
+    }
+}
+
+# Save to file
+with open("chunked_prompt.json", "w") as f:
+    json.dump(chunked_prompt, f, indent=4)
