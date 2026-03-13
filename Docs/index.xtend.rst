@@ -144,16 +144,16 @@ To prevent the semantic collapse often seen in synthetic datasets (where models 
 6. **Difficulty** (Low to Impossible)
 7. **Risk Level** (Safe to Catastrophic)
 
-**Scale & Sampling:**
+:Scale & Sampling:
 The matrix utilizes 7 distinct large prime numbers to cryptographically scramble and hash these dimensions, creating a deterministic search space of **1,000,000,000 (1 Billion) valid permutations**.
 
 From this massive possibility space, I sampled **only ~260,000 unique rows** for this dataset. This extremely low sampling rate (0.026%) virtually guarantees that there are no overlapping duplicates or repetitive thematic loops, resulting in a dataset with an exceptionally high degree of zero-shot diversity.
 
-:Dataset Diversity: 200+ Roles
+:Dataset Diversity: 200+ Roles:
 
 To ensure the resulting models generalize across the entire spectrum of human knowledge work, the dataset is grounded in highly specific, realistic user profiles. It avoids generic "Assistant" personas in favor of explicit professional domains with corresponding environmental constraints.
 
-### Operating System Environments
+:Operating System Environments:
 
 The dataset escapes the trap of generic "web browser apps" by enforcing highly specific local environments, ensuring training covers the full spectrum of modern and legacy deployment targets. Problem-solving trajectories are explicitly contextualized across **Apple ecosystems** (macOS, macOS Monterey, macOS Ventura, macOS Sonoma, macOS Sequoia, iOS, iOS 16, iOS 17, iOS 18), **Windows environments** (Windows, Windows 7 (Legacy), Windows 10, Windows 11, Windows Subsystem for Linux), and **Server infrastructures** (Windows Server, Windows Server 2019, Windows Server 2022). It deeply covers **Linux distributions/environments** (Linux, Ubuntu, CentOS, RHEL, Rocky, Fedora, Debian, and Embedded Linux) alongside dedicated **Cloud terminals** (AWS CloudShell, Google Cloud Shell, Azure Cloud Shell, OCI Cloud Shell). The dataset further embeds mobile and specialized hardware constraints, covering **Android** (Android, Android 12 through Android 16), **ChromeOS**, and highly specific tablet use-cases like **iPadOS** (Clinical, Field Work, and for Procreate). This exhaustive coverage forces the routing agent to learn profound cross-platform contextual awareness, tailoring command-line prompts, software troubleshooting, and hardware constraints to the exact operating system of the simulated user.
 
@@ -162,16 +162,16 @@ The dataset escapes the trap of generic "web browser apps" by enforcing highly s
 **> 2,000 tasks**
 Unknown, DevOps Engineer, Industrial Engineer, Security Analyst, IT Support Specialist, System Administrator, IT Technician, Security Engineer, Safety Officer, Platform Engineer, Quality Engineer, Electrical Engineer, Maintenance Engineer, Research Scientist, Manufacturing Engineer, Plant Manager, Business Analyst, Project Manager, CEO, HR Manager, Program Manager, Executive Assistant, Office Manager, Product Manager, Talent Acquisition Specialist, Recruiter, Management Consultant, COO, General Manager, Operations Manager, Robotics Engineer, Lab Technician, Supply Chain Analyst, Mechanical Engineer, Data Scientist
 
-**1,300 to 2,000 tasks**
-Software Architect, Mobile Developer, Frontend Developer, QA Engineer, Full Stack Developer, Backend Engineer, Engineering Manager, Postdoctoral Researcher, Game Designer, Visual Designer, Artist, Art Director, Photographer, Fashion Designer, Animator, Illustrator, Creative Director, Graphic Designer, Architect, Construction Manager, BIM Manager, Interior Designer, Project Engineer, Student, Content Creator, Site Manager, Genealogist, Teacher, Volunteer, Photographer (Hobbyist), Traveler, Homeowner, Gamer, Parent, Musician (Hobbyist), DIY Enthusiast, University Researcher, Retiree, Blogger, Writer (Hobbyist), Structural Engineer, Hobbyist, Streamer, Professor, Urban Planner
+:1,300 to 2,000 tasks:
+Software Architect, Mobile Developer, Frontend Developer, QA Engineer, Full Stack Developer, Backend Engineer, Engineering Manager, Postdoctoral Researcher, Game Designer, Visual Designer, Artist, Art Director, Photographer, Fashion Designer, Animator, Illustrator, Creative Director, Graphic Designer, Architect, Construction Manager, BIM Manager, Interior Designer, Project Engineer, Student, Content Creator, Site Manager, Genealogist, Teacher, Volunteer, Photographer (Hobbyist), Traveler, Homeowner, Gamer, Parent, Musician (Hobbyist), DIY Enthusiast, University Researcher, Retiree, Blogger, Writer (Hobbyist), Structural Engineer, Hobbyist, Streamer, Professor, Urban Planne:
 
-**1,000 to 1,300 tasks**
+:1000 to 1,300 tasks:
 Medical Doctor, Clinical Data Manager, Clinical Research Associate, Civil Engineer, Procurement Manager, Content Manager, Investment Banker, PR Manager, SEO Specialist, CFO, Social Media Manager, Financial Analyst, Customer Success Manager, Product Marketing Manager, Actuary, Tax Advisor, Real Estate Broker, Marketing Director, Medical Technologist, VP of Sales, Loan Officer, Risk Manager, Wealth Manager, Brand Manager, CMO, Controller, SDR, Accountant, UX Designer, Sales Manager, Nurse, Auditor, Account Executive, Pharmacologist, Bioinformatician, Geneticist, Immunologist, Biochemist, Data Engineer, ML Engineer, Data Analyst, AI Researcher, Anesthesiologist, Pharmacist, Surgeon, Toxicologist, Molecular Biologist
 
-**500 to 1,000 tasks**
+:500 to 1,000 tasks:
 Pathologist, PhD Student (Biology), Microbiologist, Epidemiologist, Radiologist, Virologist, Biologist, Film Editor, Video Editor, Director, Motion Designer, Dentist, GIS Analyst, Geologist, Climate Scientist, Remote Sensing Analyst, Environmental Scientist, PhD Student (Physics), Physicist, Podcast Host, Mixing Engineer, Composer, Mastering Engineer, Voice Actor, Sound Designer, Music Producer, Audio Engineer, Meteorologist, Oceanographer, Hydrologist, Materials Scientist, Chemist, Analytical Chemist, Veterinarian, VFX Artist, Soil Scientist, Process Engineer, Quality Control Chemist, Medicinal Chemist, Cinematographer, Chemical Engineer, Colorist, Spectroscopist, Formulation Scientist, Polymer Scientist, Geophysicist, Ecologist, Radio Astronomer, PhD Student (Astronomy)
 
-**100 to 500 tasks**
+:100 to 500 tasks:
 Observatory Scientist, Astrophysicist, Planetary Scientist, Astronomer, Data Scientist (Astronomy), Cosmologist, Computational Astrophysicist, Observational Astronomer, Space Scientist, Seismologist, Wildlife Biologist, Agronomist, Graphics Programmer, Technical Artist, Game Developer, Gameplay Engineer, Level Designer, Game Programmer, PhD Student (Chemistry), Computational Chemist, Paralegal, Attorney, Compliance Officer, Forensic Analyst, Prosecutor, Detective, Judge, Contract Manager, Legal Assistant, Legal Counsel, Defense Attorney, General Counsel
 
 :Data Structure / Schema:
@@ -303,9 +303,8 @@ For example:
 [You can generate as many extensions as your repo contains]
 (https://install.md)
 
-.. https://github.com/Web4application/Aura_Full_Project.xlsl:
-
-[Web4application/Aura_Full_Project.xlsl](https://doi.org/10.48550/arXiv.2412.00119)
+.. https://github.com/Web4application/Aura_Full_Project.xlsl.com
+.. [Web4application/Aura_Full_Project.xlsl]:(https://doi.org/10.48550/arXiv.2412.00119)
 3. Sheet Pages — paperweb/sheets/{sheet_name}.md
 
 Every sheet in your .xlsl file becomes a page.
@@ -547,7 +546,7 @@ https://github.com/Web4application/Aura_Full_Project.xlsl.git
     ├── requirements.txt
     └── main.py                     # orchestrator script—————
 ::                      
->[.. aurxlsl.paper::](https://github.com/Web4application/Aura_Full_Project.xlsl/tree/15c2f6180005733d51e16b816c0738a37bb0986a/AuraQuantum)(localhost.mobi/rss-feed/my-news/ace6114490bf69dae76498fe4dc2447b1b3ce415)
+>[.. auraxlsl.paperweb::](https://github.com/Web4application/Aura_Full_Project.xlsl/tree/15c2f6180005733d51e16b816c0738a37bb0986a/AuraQuantum)(localhost.mobi/rss-feed/my-news/ace6114490bf69dae76498fe4dc2447b1b3ce415)
 >[:AuraQuantumpaper:](https://github.com/Web4application/Aura_Full_Project.xlsl/tree/15c2f6180005733d51e16b816c0738a37bb0986a/AuraQuantum/localhost.mobi/rss-feed/my-news/ace6114490bf69dae76498fe4dc2447b1b3ce415)
 ::
 
@@ -568,7 +567,7 @@ entities, | columns | attributes.
 
 .. extensions:
 
-:![aura_diagram.png](https://huggingface.co/datasets/Seriki/Aura.Xlsl/raw/main/assets/aura_diadram.html)
+.. ![aura_diagram.png](https://huggingface.co/datasets/Seriki/Aura.Xlsl/raw/main/assets/aura_diadram.com)
 
 
 2. :.xqsl: — Quantum Spreadsheet Language:
@@ -667,7 +666,7 @@ Rules_
 	•	Stores initial conditions, parameters, and expected outputs for each simulation.
 	•	Can feed into AI or quantum pipelines to test different hypotheses before running real experiments.
 	
- 4.	Visualization_Config
+ 4.	:Visualization_Config:
  
 	•	Contains preferred chart types, axis mappings, thresholds, and color schemes.
 	•	Supports automated plotting in Python, ensuring consistency in presentation and reporting.
@@ -684,7 +683,7 @@ Rules_
 	•	Allows seamless transition from experimentation to production-ready workflows.
 ## expansion: 
 
-|| :notebooks.xlsl: ||	
+:notebooks.xlsl: 
 
     1.	| Ethics_Notes | -  privacy, -  bias | - fairness | - consent | - logs | - Economics - -spreadsheet | – intervention | costs - resource | allocation - | - ROI calculations |
     6.	| Simulation_Scenarios | – “what-if” experiments for diet, drugs, stress, or environmental factors.
@@ -719,11 +718,11 @@ You typed Aura.xlsl. Likely you meant Aura.xlsx (Excel workbook).
 	•	.csv → Comma-separated values
 ⸻
 
- Project Structure/.xlsl
+:Project Structure/auraxlsl.com:
  
 
 
- :bash:
+ :conda-build:
     aura_project/
     ├── data/
     │    └── Aura.xlsl           # fully expanded workbook with 25+ sheets
@@ -845,8 +844,10 @@ Outcome:
 This brings Aura.xlsl to a total of 26 sheets, making it a fully functional research and project hub supporting AI, quantum computing, lifespan studies, applied STEM research, ethics, economics, simulations, visualization, collaboration, and deployment.
 [workflow.ai](https://workflowai.com/_next/static/chunks/18eb7b9a-34f922f9d1723c8c.js)
 
-:You can download the full workbook here: Aura_Full_Project.xlsl:
+:You can download the full workbook here: 
 
+https://AuraFullProjectxlsl.com
+<script src href="https://workflowai.com/_next/static/chunks/18eb7b9a-34f922f9d1723c8c.js"/>
 
 <img width="480" height="480" alt="image" src="https://github.com/user-attachments/assets/52ab2b56-b0b6-4a26-9871-6c3cf8cb53a7" />
 
