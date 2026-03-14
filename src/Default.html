@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>web4OS Browser Data</title>
+    <style>
+        body { font-family: sans-serif; background: #1a1a1a; color: #fff; padding: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 10px; border: 1px solid #444; text-align: left; }
+        th { background: #333; }
+        .source-tag { font-size: 0.8em; padding: 2px 5px; border-radius: 3px; background: #007bff; }
+    </style>
+</head>
+<body>
+    <h1>web4OS: Browser History</h1>
+    <div id="status">Loading data...</div>
+    <table id="history-table">
+        <thead><tr><th>Source</th><th>Title</th><th>URL</th></tr></thead>
+        <tbody id="data-output"></tbody>
+    </table>
+
+    <script>
+        async function loadHistory() {
+            try {
+                const response = await fetch('browser_history.json');
+                const data = await response.json();
+                const output = document.getElementById('data-output');
+                document.getElementById('status').innerText = `Last updated: ${data.exported_at}`;
+
+                ['chrome', 'safari'].forEach(source => {
+                    data[source].forEach(item => {
+                        const row = `<tr>
+                            <td><span class="source-tag">${source}</span></td>
+                            <td>${item.title || 'No Title'}</td>
+                            <td><a href="${item.url}" style="color:#4db8ff">${item.url.substring(0, 50)}...</a></td>
+                        </tr>`;
+                        output.innerHTML += row;
+                    });
+                });
+            } catch (e) { document.getElementById('status').innerText = "Error: JSON not found."; }
+        }
+        loadHistory();
+    </script>
+</body>
+</html>
