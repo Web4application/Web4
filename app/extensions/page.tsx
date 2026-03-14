@@ -4,45 +4,143 @@ export default function ExtensionsPage() {
   const extensions = [
     {
       name: 'Web Search Integration',
-      category: 'Search',
-      description: 'Search the web and integrate results into reasoning chains.',
+      category: 'Search & Retrieval',
+      description: 'Search the web and integrate results into reasoning chains. Enables agents to fetch real-time information.',
       status: 'stable',
       icon: '🔍',
     },
     {
       name: 'Code Execution Engine',
-      category: 'Tools',
-      description: 'Execute and validate code as part of reasoning tasks.',
+      category: 'Development',
+      description: 'Execute and validate code (Python, JavaScript, etc.) as part of reasoning tasks. Full sandbox support.',
       status: 'stable',
       icon: '⚙️',
     },
     {
       name: 'Document Processing',
-      category: 'Data',
-      description: 'Extract and process information from various document formats.',
+      category: 'Data Processing',
+      description: 'Extract and process information from PDFs, Word, Excel, and text documents. OCR support included.',
       status: 'stable',
       icon: '📄',
     },
     {
-      name: 'Math Solver',
+      name: 'Mathematical Solver',
       category: 'Reasoning',
-      description: 'Advanced mathematical reasoning and symbolic computation.',
-      status: 'beta',
+      description: 'Advanced mathematical reasoning, symbolic computation, and scientific calculations with step-by-step solutions.',
+      status: 'stable',
       icon: '∑',
     },
     {
-      name: 'Image Analysis',
-      category: 'Vision',
-      description: 'Analyze images and integrate visual understanding.',
-      status: 'beta',
+      name: 'Image Analysis & Vision',
+      category: 'Multimodal',
+      description: 'Analyze images, perform OCR, object detection, and integrate visual understanding into reasoning.',
+      status: 'stable',
       icon: '🖼️',
     },
     {
+      name: '3D Model Processing',
+      category: 'Multimodal',
+      description: 'Process and analyze 3D models, point clouds, and geometric data. GLB/GLTF format support.',
+      status: 'stable',
+      icon: '📦',
+    },
+    {
+      name: 'Audio Processing',
+      category: 'Multimodal',
+      description: 'Speech-to-text, audio analysis, and sound processing with multiple language support.',
+      status: 'stable',
+      icon: '🔊',
+    },
+    {
+      name: 'Video Analysis',
+      category: 'Multimodal',
+      description: 'Frame extraction, video processing, and temporal reasoning from video content.',
+      status: 'beta',
+      icon: '🎥',
+    },
+    {
       name: 'Knowledge Graph Builder',
-      category: 'Knowledge',
-      description: 'Build and query knowledge graphs from text.',
-      status: 'experimental',
+      category: 'Knowledge Management',
+      description: 'Build, query, and traverse knowledge graphs from text. Semantic relationship extraction.',
+      status: 'stable',
       icon: '🧬',
+    },
+    {
+      name: 'RAG Pipeline',
+      category: 'Search & Retrieval',
+      description: 'Retrieval-Augmented Generation pipeline with vector search and semantic ranking.',
+      status: 'stable',
+      icon: '🔗',
+    },
+    {
+      name: 'Software Engineering Tools',
+      category: 'Development',
+      description: 'Code analysis, debugging, refactoring, and software architecture understanding.',
+      status: 'stable',
+      icon: '💻',
+    },
+    {
+      name: 'Legal Document Analyzer',
+      category: 'Domain-Specific',
+      description: 'Analyze contracts, legal documents, and compliance requirements with specialized reasoning.',
+      status: 'stable',
+      icon: '⚖️',
+    },
+    {
+      name: 'Medical & Healthcare AI',
+      category: 'Domain-Specific',
+      description: 'Medical literature analysis, clinical reasoning, and healthcare document processing.',
+      status: 'beta',
+      icon: '⚕️',
+    },
+    {
+      name: 'Scientific Research Tools',
+      category: 'Domain-Specific',
+      description: 'Chemistry, biology, physics, and climate science specialized reasoning and calculations.',
+      status: 'stable',
+      icon: '🔬',
+    },
+    {
+      name: 'Financial Analysis Engine',
+      category: 'Domain-Specific',
+      description: 'Financial data analysis, market research, and investment reasoning capabilities.',
+      status: 'stable',
+      icon: '📈',
+    },
+    {
+      name: 'Creative Content Tools',
+      category: 'Content Creation',
+      description: 'Art, design, music, and creative content generation with style understanding.',
+      status: 'beta',
+      icon: '🎨',
+    },
+    {
+      name: 'Chain-of-Thought Reasoning',
+      category: 'Reasoning',
+      description: 'System-2 thinking with step-by-step problem deconstruction and reasoning traces.',
+      status: 'stable',
+      icon: '🧠',
+    },
+    {
+      name: 'Tool Use & Composition',
+      category: 'Orchestration',
+      description: 'Dynamic tool selection, chaining, and composition for complex multi-step tasks.',
+      status: 'stable',
+      icon: '🔧',
+    },
+    {
+      name: 'Edge AI Deployment',
+      category: 'Infrastructure',
+      description: 'Optimize and deploy models for edge devices with reduced latency and offline support.',
+      status: 'stable',
+      icon: '📡',
+    },
+    {
+      name: 'Agentic Framework',
+      category: 'Orchestration',
+      description: 'Complete agent orchestration with planning, tool use, and self-reflection capabilities.',
+      status: 'stable',
+      icon: '🤖',
     },
   ];
 
@@ -57,7 +155,7 @@ export default function ExtensionsPage() {
         </div>
 
         <div className="mb-8 flex gap-2 flex-wrap">
-          {['All', 'Search', 'Tools', 'Data', 'Reasoning', 'Vision'].map((tag) => (
+          {['All', 'Search & Retrieval', 'Development', 'Reasoning', 'Multimodal', 'Domain-Specific', 'Orchestration'].map((tag) => (
             <button
               key={tag}
               className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
