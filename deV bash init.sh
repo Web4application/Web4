@@ -8,3 +8,11 @@ tools/dev/gm.py quiet x64.release
 tools/dev/gm.py quiet x64.debug
 # Example of running d8 with gdb
 gdb --args out/x64.debug/d8 --my-flag my-script.js
+# Install dependencies
+pnpm i
+
+# Local development [right-click to open debug mode]
+pnpm run dev
+
+# Build application
+pnpm run build
