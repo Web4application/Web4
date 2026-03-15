@@ -1,5 +1,5 @@
 ---
-pretty_name: "aura.paperweb-The intelligence web"
+pretty_name: "aura.paperweb-The  intelligence web"
 license: mit
 language:
 - en
