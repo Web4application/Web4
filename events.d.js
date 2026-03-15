@@ -1,5 +1,5 @@
 import 'vite/types/customEvent.d.ts'
-// client side
+// client side 
 if (import.meta.hot) {
   import.meta.hot.on('my:greetings', (data) => {
     console.log(data.msg) // hello
