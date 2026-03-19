@@ -1,5 +1,4 @@
 ### Walkthrough of an idiomatic fasthtml app ###
-
 # This fasthtml app includes functionality from fastcore, starlette, fastlite, and fasthtml itself.
 # Run with: `python adv_app.py`
 # Importing from `fasthtml.common` brings the key parts of all of these together. We recommend using a wildcard import since only necessary parts are exported by the module.
