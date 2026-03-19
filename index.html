@@ -1,64 +1,67 @@
-<!DOCTYPE html><!-- Loads /flower.html onto #my-element -->
-<a href="/flower.html#my-element" target=htmz>Flower</a>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <iframe hidden name=htmz onload="setTimeout(()=>document.querySelector(contentWindow.location.hash||null)?.replaceWith(...contentDocument.body.childNodes))"></iframe>
-    <style>
-        .pdf-container {
-            position: relative;
-            width: 100%;
-            max-width: 1280px; /* Matches your Python script width */
-            margin: 0 auto;
-            aspect-ratio: 16 / 9; /* Matches 1280x720 ratio */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-    </style>
+<meta charset="UTF-8" />
+<title>HTMZ Loader</title>
+
+<style>
+  .pdf-container {
+    position: relative;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+
+  .pdf-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+</style>
+
+<script>
+  function htmz(frame) {
+    const targetSelector = frame.contentWindow.location.hash;
+    if (!targetSelector) return;
+
+    const target = document.querySelector(targetSelector);
+    if (!target) return;
+
+    target.replaceWith(...frame.contentDocument.body.childNodes);
+  }
+</script>
+
 </head>
 <body>
-    <form action="/default#my-target" target=htmz>
-  <button>Default form action</button>
-  <button formaction="/button#my-target">
+
+<!-- Hidden iframe used as loader -->
+<iframe hidden name="htmz" onload="htmz(this)"></iframe>
+
+<!-- Example Links -->
+<a href="/flower.html#my-element" target="htmz">Flower</a>
+
+<!-- Example Form -->
+<form action="/default#my-target" target="htmz">
+  <button type="submit">Default form action</button>
+  <button type="submit" formaction="/button#my-target">
     Different button action
   </button>
-  <button formaction="/another-action#another-target">
+  <button type="submit" formaction="/another-action#another-target">
     Another action
   </button>
-</form
-    <div class="pdf-container">
-        <!-- #toolbar=0 hides the standard browser UI for a cleaner 'app' look -->
-        <iframe src="web_asset.pdf#toolbar=0&navpanes=0" type="application/pdf"></iframe>
-    <iframe hidden name="#my-element" onload="htmz(this)"></iframe>
-<script>
-  function htmz(frame) {
-    document.querySelector(frame.name) // use the iframe's name instead of the URL hash
-      ?.replaceWith(...frame.contentDocument.body.childNodes);
-  }
-</script>
-        <!-- The ideal:
-     GET /flower.html => #my-element            -->
-<a href="/flower.html" target="#my-element">Flower</a>
+</form>
 
-<!-- Actual:
-     GET /flower.html =htmz> #my-element        -->
-<a href="/flower.html#my-element" target=htmz>Flower</a>
-    </div>
+<!-- Target elements -->
+<div id="my-element"></div>
+<div id="my-target"></div>
+<div id="another-target"></div>
+
+<!-- PDF Viewer -->
+<div class="pdf-container">
+  <iframe src="web_asset.pdf#toolbar=0&navpanes=0" type="application/pdf"></iframe>
+</div>
+
 </body>
 </html>
-<script>
-  function htmz(frame) {
-    // Write your extensions here
-
-    // Remove setTimeout to let the browser autoscroll content changes into view
-    setTimeout(() =>
-      document
-        .querySelector(frame.contentWindow.location.hash || null)
-        ?.replaceWith(...frame.contentDocument.body.childNodes)
-    );
-  }
-</script>
-<iframe hidden name=htmz onload="htmz(this)"></iframe>
