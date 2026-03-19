@@ -1,8 +1,3 @@
-
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31903.59
-MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{827E0CD3-B72D-47B6-A68D-7590B98EB39B}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Falco", "src\Falco\Falco.fsproj", "{D6613F0B-7571-432E-964B-B9629B3B06CB}"
