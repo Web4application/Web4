@@ -68,7 +68,7 @@ By default pip will install the latest `pytorch` with the latest `cudatoolkit`. 
 
 If a bug fix was made in git and you can't wait till a new release is made, you can install the bleeding edge version of `fastai` with:
 
-```
+```bash
 pip install git+https://github.com/fastai/fastai1.git
 ```
 
@@ -119,7 +119,45 @@ If for any reason you can't use the prepackaged packages and have to build from 
    to validate that they were installed correctly
 
    Finally, proceed with `fastai` installation as normal, either through prepackaged pip or conda builds or installing from source ("the developer install") as explained in the sections above.
+# Right-sizing
 
+You can customize your Sheetsee build with just the parts you want to use, for example to only include the mapping module or only the tables module. If you want to just use the full version, you can grab it here at [github.com/jlord/sheetsee.js](https://github.com/jlord/sheetsee.js/blob/master/js/sheetsee.js).
+
+All builds come with [Mustache.js](https://mustache.github.io) and [Leaflet.js](http://leafletjs.com). Additionally, you'll need to link to [Tabletop.js](https://github.com/jsoma/tabletop) your HTML head like so:
+
+```HTML
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
+<script src="js/sheetsee.js"></script>
+```
+
+**To build a custom Sheetsee you'll need [Node.js](http://www.nodejs.org) on your computer familiarity with the command line.**
+
+Download Node.js from [nodejs.org/download](http://nodejs.org/download). For most users you can just download the Mac _.pkg_ or Windows _.msi_. Follow the install instructions; both include npm. Then install `sheetsee`.
+
+## Install `sheetsee` from npm
+The `sheetsee` (with no '.js') module is the tool for building custom Sheetsee builds. Install `sheetsee` globally and then run it within the folder of your soon-to-be Sheetsee project.
+
+_Install globally_
+
+```bash
+npm install -g sheetsee
+```
+
+_Run from within a project folder_
+
+```bash
+sheetsee [options]
+```
+
+Here are the options for the different modules. If you want save the generated file as _sheetsee.js_ then add the `--save` option.
+
+- `-m` or `-maps` for maps
+- `-t` or `-tables` for tables
+- `--save` to write out the file*
+
+_* otherwise, defaults to standard out on your console which you can_ `| pbcopy`
+
+So for instance, `sheetsee -m --save` l
 
 
 ## Installation Issues
@@ -130,7 +168,49 @@ If you encounter installation problems with conda, make sure you have the latest
 ```bash
 conda install conda
 ```
+`sss.css`
 
+```html
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="js/tabletop.js"></script>
+    <script type="text/javascript" src='js/sheetsee.js'></script>
+    <link rel="stylesheet" type="text/css" href="css/sss.css">
+  </head>
+  <body>
+  <div id="placeholder"></div>
+
+  <script id="placeholder" type="text/html">
+    // template if you so desire!
+  </script>
+
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        var URL = 'YOURSPREADSHEETSKEYHERE'
+        Tabletop.init( { key: URL, callback: myData, simpleSheet: true } )
+    })
+    function myData (data) {
+      // All the sheetsee things you want to do!
+    }
+  </script>
+  </body>
+</html>
+```
+
+```javascript
+function callback (data) {
+  // All the Sheetsee things you want to do!
+}
+```
+tabletop.js
+
+```jsx
+document.addEventListener('DOMContentLoaded', function() {
+  var URL = 'aura.paperweb
+  Tabletop.init({key: URL, callback: callback, simpleSheet: true})
+})
+```
 ### Is My System Supported?
 
 1. Python: You need to have python 3.6 or higher
@@ -188,6 +268,15 @@ In order to update your environment, simply install `fastai` in exactly the same
 
 Top level files `environment.yml` and `environment-cpu.yml` belong to the old fastai (0.7). `conda env update` is no longer the way to update your `fastai-1.x` environment. These files remain because the fastai course-v2 video instructions rely on this setup. Eventually, once fastai course-v3 p1 and p2 will be completed, they will probably be moved to where they belong - under `old/`.
 
+```json        
+var optionsJSON = ['name', 'breed', 'cuddlability']
+var geoJSON = Sheetsee.createGeoJSON(data, optionsJSON)
+```
+
+```js
+var optionsJSON = ['name', 'breed', 'cuddlability']
+var geoJSON = Sheetsee.createGeoJSON(data, optionsJSON)
+```
 ## Contribution guidelines
 
 If you want to contribute to `fastai`, be sure to review the [contribution guidelines](https://github.com/fastai/fastai1/blob/master/CONTRIBUTING.md). This project adheres to fastai's [code of conduct](https://github.com/fastai/fastai1/blob/master/CODE-OF-CONDUCT.md). By participating, you are expected to uphold this code.
