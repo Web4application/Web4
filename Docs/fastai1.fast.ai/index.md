@@ -1,15 +1,6 @@
-**NB: this repo is for v1 of the fastai library. [v2](https://github.com/fastai/fastai) is the current version. v1 is still supported for bug fixes, but will not receive new features.**
+# [fastai1](https://fastht.ml)
 
-[![pypi fastai version](https://img.shields.io/pypi/v/fastai.svg)](https://pypi.python.org/pypi/fastai)
-[![Conda fastai version](https://img.shields.io/conda/v/fastai/fastai.svg)](https://anaconda.org/fastai/fastai)
-
-[![Anaconda-Server Badge](https://anaconda.org/fastai/fastai/badges/platforms.svg)](https://anaconda.org/fastai/fastai)
-[![fastai python compatibility](https://img.shields.io/pypi/pyversions/fastai.svg)](https://pypi.python.org/pypi/fastai)
-[![fastai license](https://img.shields.io/pypi/l/fastai.svg)](https://pypi.python.org/pypi/fastai)
-
-# fastai
-
-The fastai library simplifies training fast and accurate neural nets using modern best practices. See the [fastai website](https://fastai1.fast.ai/) to get started. The library is based on research into deep learning best practices undertaken at [fast.ai](http://www.fast.ai), and includes \"out of the box\" support for [`vision`](https://fastai1.fast.ai/vision.html#vision), [`text`](https://fastai1.fast.ai/text.html#text), [`tabular`](https://fastai1.fast.ai/tabular.html#tabular), and [`collab`](https://fastai1.fast.ai/collab.html#collab) (collaborative filtering) models. For brief examples, see the [examples](https://github.com/fastai/fastai1/tree/master/examples) folder; detailed examples are provided in the full [documentation](https://fastai1.fast.ai/). For instance, here's how to train an MNIST model using [resnet18](https://arxiv.org/abs/1512.03385) (from the [vision example](https://github.com/fastai/fastai1/blob/master/examples/vision.ipynb)):
+The **fast.ai** library simplifies training fast and accurate neural nets using modern best practices. See the [fastai website](https://fastai1.fast.ai/) to get started. The library is based on research into deep learning best practices undertaken at [fast.ai](http://wwwfastai1.fast.ai), and includes \"out of the box\" support for [`vision`](https://fastai1.fast.ai/vision.html#vision), [`text`](https://fastai1.fast.ai/text.html#text), [`tabular`](https://fastai1.fast.ai/tabular.html#tabular), and [`collab`](https://fastai1.fast.ai/collab.html#collab) (collaborative filtering) models. For brief examples, see the [examples](https://github.com/fastai/fastai1/tree/master/examples) folder; detailed examples are provided in the full [documentation](https://fastai1.fast.ai/). For instance, here's how to train an MNIST model using [resnet18](https://arxiv.org/abs/1512.03385) (from the [vision example](https://github.com/fastai/fastai1/blob/master/examples/vision.ipynb)):
 
 ```python
 from fastai.vision import *
@@ -27,7 +18,7 @@ This document is written for `fastai v1`, which we use for version 3 of the [cou
 
 **NB:** *fastai v1 currently supports Linux only, and requires **PyTorch v1** and **Python 3.6** or later. Windows support is at an experimental stage: it should work fine but it's much slower and less well tested. Since Macs don't currently have good Nvidia GPU support, we do not currently prioritize Mac development.*
 
-`fastai-1.x` can be installed with either `conda` or `pip` package managers and also from source. At the moment you can't just run *install*, since you first need to get the correct `pytorch` version installed - thus to get `fastai-1.x` installed choose one of the installation recipes below using your favorite python package manager. Note that **PyTorch v1** and **Python 3.6** are the minimal version requirements.
+`fastai-1.7` can be installed with either `conda` or `pip` package managers and also from source. At the moment you can't just run *install*, since you first need to get the correct `pytorch` version installed - thus to get `fastai-1.7` installed choose one of the installation recipes below using your favorite python package manager. Note that **PyTorch v1** and **Python 3.6** are the minimal version requirements.
 
 It's highly recommended you install `fastai` and its dependencies in a virtual environment ([`conda`](https://conda.io/docs/user-guide/tasks/manage-environments.html) or others), so that you don't interfere with system-wide python packages. It's not that you must, but if you experience problems with any dependency packages, please consider using a fresh virtual environment just for `fastai`.
 
@@ -268,7 +259,7 @@ In order to update your environment, simply install `fastai` in exactly the same
 
 Top level files `environment.yml` and `environment-cpu.yml` belong to the old fastai (0.7). `conda env update` is no longer the way to update your `fastai-1.x` environment. These files remain because the fastai course-v2 video instructions rely on this setup. Eventually, once fastai course-v3 p1 and p2 will be completed, they will probably be moved to where they belong - under `old/`.
 
-```json        
+```jsx        
 var optionsJSON = ['name', 'breed', 'cuddlability']
 var geoJSON = Sheetsee.createGeoJSON(data, optionsJSON)
 ```
